@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# make nginx inactive or kills the process at end
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
+kill $(ps aux | grep '[n]ginx' | awk '{print $2}')
