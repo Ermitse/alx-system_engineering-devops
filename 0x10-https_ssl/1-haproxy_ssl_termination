@@ -33,12 +33,10 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend lims24-tech-frontend
+frontend http-in
         bind *:80
-        mode http
-        default_backend lims24-tech-backend
-
-backend lims24-tech-backend
+        default_backend servers
+backend servers
         balance roundrobin
         server 116008-web-01 54.236.12.160:80 check
         server 116008-web-02 100.26.158.11:80 check
