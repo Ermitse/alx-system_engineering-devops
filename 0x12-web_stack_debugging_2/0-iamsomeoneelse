@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
+# script that returns the arguement as when you run whoami
+
 sudo -u "$1" whoami
